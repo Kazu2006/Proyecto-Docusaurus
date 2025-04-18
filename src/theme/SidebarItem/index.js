@@ -1,19 +1,24 @@
 import React from 'react';
-import { FaBook, FaKey } from 'react-icons/fa';
+import OriginalSidebarItem from '@theme-original/SidebarItem';
+// Nota: aquí no necesitas importar de nuevo los iconos, vienen en props.item.customProps.icon
 
-const iconMap = {
-  manual: <FaBook style={{ marginRight: '0.5rem' }} />,
-  gestor: <FaKey style={{ marginRight: '0.5rem' }} />,
-};
-
-export default function SidebarItem({ item, ...props }) {
-  const Icon = iconMap[item.id] || null;
+export default function SidebarItem(props) {
+  const { item } = props;
+  const Icon = item.customProps?.icon;
   return (
     <OriginalSidebarItem
       {...props}
-      item={item}
-      // Renderizamos icono antes del label
-      label={Icon ? <><Icon />{item.label}</> : item.label}
+      // inyectamos delante del label:
+      label={
+        Icon ? (
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5em' }}>
+            <Icon />
+            {item.label}
+          </span>
+        ) : (
+          item.label
+        )
+      }
     />
   );
 }
