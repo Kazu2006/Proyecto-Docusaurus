@@ -19,7 +19,7 @@ const config = {
   url: 'https://960439320.senati.chat.pe',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Docusaurus/',
+  baseUrl: '/docusaurus',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -65,8 +65,8 @@ const config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
-        },
+          customCss: require.resolve('./src/css/custom.css'),
+        },        
       }),
     ],
   ],
