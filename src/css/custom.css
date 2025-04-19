@@ -1,16 +1,29 @@
-/* Ocultar marca Docusaurus */
+/* src/css/custom.css */
+
+/* 1. Ocultar branding de Docusaurus */
 .navbar__title,
+.navbar__logo,
+.footer__logo,
 .footer__brand {
   display: none;
 }
 
-/* Tipografía personalizada */
-:root {
-  --ifm-font-family-base: 'Open Sans', sans-serif;
-}
-
-/* Colores corporativos */
+/* 2. Colores y tipografía de marca */
 :root {
   --ifm-color-primary: #1a73e8;
   --ifm-color-secondary: #e37400;
+  --ifm-font-family-base: 'Open Sans', sans-serif;
+  --ifm-code-font-family: 'Fira Code', monospace;
+}
+
+/* 3. Ajustes de layout */
+.navbar,
+.footer {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 4. Enlaces sin subrayado */
+a {
+  text-decoration: none;
 }
