@@ -1,22 +1,23 @@
 // sidebars.js
 const { FaCogs, FaLock } = require('react-icons/fa');
 
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   tutorialSidebar: [
     {
       type: 'doc',
-      id: 'intro',
-      label: 'Introducción',
+      id: 'inspector-elementos',
+      label: 'Inspector de Elementos',
       customProps: { icon: FaCogs },
     },
     {
       type: 'doc',
-      id: 'tutorial-basics/create-a-page',
-      label: 'Crea una página',
+      id: 'gestor-contrasenas',
+      label: 'Gestor de Contraseñas',
       customProps: { icon: FaLock },
     },
-    // etc.→ usa sólo IDs que sí existan
   ],
 };
 
 module.exports = sidebars;
+
