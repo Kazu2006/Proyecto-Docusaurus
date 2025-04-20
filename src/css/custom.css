@@ -1,53 +1,116 @@
 /* ─────────────────────────────────────────────────────────
-   0) RESET ligero para quitar centrados por defecto
+   0) Fuentes
 ───────────────────────────────────────────────────────── */
-.main-wrapper {
-  max-width: 1000px;
-  margin: 2rem auto 4rem auto;
-  padding: 0 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap');
+
+/* ─────────────────────────────────────────────────────────
+   1) VARIABLES: tema Amanecer
+───────────────────────────────────────────────────────── */
+:root {
+  /* Font */
+  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-font-family-headings: 'Poppins', sans-serif;
+
+  /* Colores Claro */
+  --ifm-color-background: #fff8f0;       /* piel de durazno muy suave */
+  --ifm-color-surface:    #ffffff;       /* blanco puro */
+  --ifm-color-text:       #1a1a1a;       /* casi negro */
+  --ifm-color-primary:    #ff8c00;       /* naranja amanecer */
+  --ifm-color-primary-dark: #e07b00;      /* naranja más intenso */
+  --ifm-color-secondary:  #ffdd91;       /* melocotón */
+  --ifm-color-muted:      #555555;       /* texto secundario */
+  --ifm-color-border:     #ffe5cc;       /* borde suave */
 }
-.theme-doc-content {
-  padding-left: 2rem;
-  padding-right: 2rem;
+
+[data-theme='dark'] {
+  /* Colores Oscuro */
+  --ifm-color-background:  #1a1626;      /* púrpura profundo */
+  --ifm-color-surface:     #2b2540;      /* morado grisáceo */
+  --ifm-color-text:        #e0dfe6;      /* gris claro */
+  --ifm-color-primary:     #ffa347;      /* naranja suave */
+  --ifm-color-primary-dark:#e68a00;      /* naranja intenso */
+  --ifm-color-secondary:   #704b75;      /* lila apagado */
+  --ifm-color-muted:       #aaaaaa;      /* texto secundario */
+  --ifm-color-border:      #3b2d4a;      /* borde oscuro */
 }
 
 /* ─────────────────────────────────────────────────────────
-   1) VARIABLES: paleta moderna
+   2) Reset ligero y Layout
 ───────────────────────────────────────────────────────── */
-/* Tema claro */
-:root {
-  --ifm-font-family-base: 'Inter', sans-serif;
-  --ifm-color-background: #f5f2f8;           /* lila muy suave */
-  --ifm-color-surface: #ffffff;
-  --ifm-color-primary: #8d6dcf;              /* púrpura medio */
-  --ifm-color-primary-dark: #7549ac;
-  --ifm-color-secondary: #ffb86c;            /* naranja suave */
-  --ifm-color-text: #2d2d34;
-  --ifm-color-muted: #6c6c80;
-  --ifm-color-border: #e0dfe6;
-}
-
-/* Tema oscuro */
-[data-theme='dark'] {
-  --ifm-color-background: #1f1f2e;           /* azul oscuro/adamascado */
-  --ifm-color-surface: #252539;
-  --ifm-color-primary: #b78cff;              /* lila neón */
-  --ifm-color-primary-dark: #9463e1;
-  --ifm-color-secondary: #ff9e64;            /* naranja cálido */
-  --ifm-color-text: #e0dfe6;
-  --ifm-color-muted: #9999a8;
-  --ifm-color-border: #3a3a52;
-}
-
-/* Aplica fondo general */
 body {
-  background-color: var(--ifm-color-background);
+  margin: 0;
+  padding: 0;
+  background: var(--ifm-color-background);
   color: var(--ifm-color-text);
   font-family: var(--ifm-font-family-base);
+  line-height: 1.6;
+}
+
+/* Centro y márgenes del contenido */
+.main-wrapper {
+  max-width: 1000px;
+  margin: 5rem auto 1rem;
+  padding: 0 1rem;
+}
+
+/* Sidebar fija y contenido responsivo */
+.theme-doc-sidebar-container {
+  position: fixed;
+  top: 4rem;
+  left: 1rem;
+  width: 220px;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+  background: var(--ifm-color-surface);
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 1rem;
+}
+.main-wrapper {
+  margin-left: 260px;
+  max-width: calc(100% - 280px);
+}
+.docBreadcrumb {
+  margin-left: 260px;
+}
+
+/* Sidebar móvil */
+@media (max-width: 768px) {
+  .theme-doc-sidebar-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    margin-bottom: 1rem;
+  }
+  .main-wrapper {
+    margin-left: 0;
+  }
 }
 
 /* ─────────────────────────────────────────────────────────
-   2) NAVBAR: cristal moderno
+   3) Tipografías y encabezados
+───────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5 {
+  font-family: var(--ifm-font-family-headings);
+  color: var(--ifm-color-primary);
+  margin-top: 2rem;
+  letter-spacing: 0.5px;
+}
+
+/* Links por defectos y hover */
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color .2s;
+}
+a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* ─────────────────────────────────────────────────────────
+   4) Navbar translúcida
 ───────────────────────────────────────────────────────── */
 .navbar {
   background: rgba(255,255,255,0.8);
@@ -56,7 +119,7 @@ body {
   border-bottom: 1px solid var(--ifm-color-border);
 }
 [data-theme='dark'] .navbar {
-  background: rgba(31,31,47,0.8);
+  background: rgba(26,22,38,0.8);
 }
 .navbar__link {
   color: var(--ifm-color-text);
@@ -80,20 +143,8 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────
-   3) SIDEBAR: estilo «tarjeta» e indentado
+   5) Sidebar items
 ───────────────────────────────────────────────────────── */
-.theme-doc-sidebar-container {
-  background: var(--ifm-color-surface);
-  border-radius: 8px;
-  padding: 1rem 0.5rem;
-  margin-right: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  border: 1px solid var(--ifm-color-border);
-}
-[data-theme='dark'] .theme-doc-sidebar-container {
-  background: var(--ifm-color-surface);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
 .theme-doc-sidebar-item-link {
   display: block;
   padding: 0.6rem 1rem;
@@ -101,7 +152,7 @@ body {
   border-radius: 6px;
   color: var(--ifm-color-text);
   font-weight: 500;
-  transition: background .2s;
+  transition: background .2s, color .2s;
 }
 .theme-doc-sidebar-item-link:hover {
   background: var(--ifm-color-primary);
@@ -113,7 +164,7 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────
-   4) BOTONES y enlaces
+   6) Botones y focus states
 ───────────────────────────────────────────────────────── */
 button, .button {
   background: var(--ifm-color-primary);
@@ -122,23 +173,20 @@ button, .button {
   padding: 0.6rem 1.2rem;
   color: #fff;
   font-weight: 500;
+  cursor: pointer;
   transition: background .2s, transform .1s;
 }
 button:hover, .button:hover {
   background: var(--ifm-color-primary-dark);
   transform: translateY(-1px);
 }
-a {
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-  transition: color .2s;
-}
-a:hover {
-  color: var(--ifm-color-primary-dark);
+button:focus, .button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,140,0,0.4);
 }
 
 /* ─────────────────────────────────────────────────────────
-   5) FOOTER: limpio y minimalista
+   7) Footer limpio
 ───────────────────────────────────────────────────────── */
 .footer {
   background: var(--ifm-color-surface);
@@ -151,12 +199,9 @@ a:hover {
 .footer a {
   color: var(--ifm-color-secondary);
 }
-.footer .footer__link-list li {
-  margin-bottom: 0.4rem;
-}
 
 /* ─────────────────────────────────────────────────────────
-   6) CÓDIGO y bloques de resaltado
+   8) Código y bloques de resaltado
 ───────────────────────────────────────────────────────── */
 .theme-code-block {
   border-radius: 6px;
@@ -167,7 +212,9 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Ajustes extra para no centrar imágenes y módulos */
+/* ─────────────────────────────────────────────────────────
+   9) Imágenes alineadas al inicio
+───────────────────────────────────────────────────────── */
 .docImageBlock,
 .blockImage {
   text-align: left !important;

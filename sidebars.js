@@ -6,6 +6,12 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'doc',
+      id: 'intro',
+      label: 'Introducción',
+      className: 'sidebar-item--intro',
+    },
+    {
+      type: 'doc',
       id: 'inspector-elementos',
       label: 'Inspector de Elementos',
       customProps: { icon: FaCogs },

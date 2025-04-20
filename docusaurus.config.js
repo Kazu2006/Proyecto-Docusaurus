@@ -19,8 +19,15 @@ const config = {
   url: 'https://960439320.senati.chat.pe',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docusaurus',
+  baseUrl: '/docusaurus/',
 
+
+    // <-- aquí abajo
+    stylesheets: [
+      'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap',
+      'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'
+    ],
+    
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'facebook', // Usually your GitHub org/user name.
