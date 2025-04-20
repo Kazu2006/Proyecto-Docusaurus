@@ -19,15 +19,14 @@ const config = {
   url: 'https://960439320.senati.chat.pe',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docusaurus/',
+  baseUrl: '/docusaurus',
 
 
-    // <-- aquí abajo
-    stylesheets: [
-      'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap',
-      'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'
-    ],
-    
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap',
+    'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap',
+  ],
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'facebook', // Usually your GitHub org/user name.
@@ -78,36 +77,96 @@ const config = {
     ],
   ],
 
-  themeConfig: {
-    colorMode: {
-      // Habilita tema claro/oscuro con default en claro
-      defaultMode: 'light',
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
-    },
-    navbar: {
-      style: 'primary',       // background primario
-      hideOnScroll: false,
-      items: [ /* tus items */ ],
-    },
-    docs: {
-      sidebar: {
-        hideable: true,       // sidebar plegable
-        autoCollapseCategories: true,
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      // Replace with your project's social card
+      image: 'img/docusaurus-social-card.jpg',
+
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
-    },
-    prism: {
-      // usa un tema oscuro claro inspirados en Mintlify:
-      theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/dracula'),
-    },
-    // paleta de colores global:
-    // estos vars estarán disponibles en CSS con var(--ifm-color-...)
-    // saca las que necesites para tus botones, links, navbar, etc.
-    // inspírate en Mintlify: fondo verde oscuro en dark, botones blancos/transparentes, acciones en verde claro.
-    colorMode: { /*…*/ },
-  },
-  
+      docs: {
+        sidebar: {
+          hideable: false,
+        },
+      }, 
+      
+      navbar: {
+        title: 'My Site',
+        logo: {
+          alt: 'My Site Logo',
+          src: 'img/logo.svg',
+        },
+        items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Tutorial',
+          },
+          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            href: 'https://github.com/facebook/docusaurus',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+      },
+      
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Docs',
+            items: [
+              {
+                label: 'Tutorial',
+                to: '/docs/intro',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discordapp.com/invite/docusaurus',
+              },
+              {
+                label: 'X',
+                href: 'https://x.com/docusaurus',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/facebook/docusaurus',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      },
+      prism: {
+        theme: prismThemes.nightOwlLight,
+        darkTheme: prismThemes.nightOwl,
+      },
+      
+    }),
 };
 
 export default config;

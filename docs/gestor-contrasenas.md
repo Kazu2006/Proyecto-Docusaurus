@@ -1,15 +1,7 @@
 ---
 id: gestor-contrasenas
 title: Gestor de Contraseñas
-sidebar_label: Gestor
----
-
-# Manual para implementar un Gestor de Contraseñas
-<!-- contenido aquí -->
----
-id: gestor-contrasenas
-title: Gestor de Contraseñas
-sidebar_label: Gestor
+sidebar_label: Gestor de Contraseñas
 ---
 
 # Manual para implementar un Gestor de Contraseñas y su uso práctico

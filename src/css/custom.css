@@ -1,125 +1,64 @@
-/* ─────────────────────────────────────────────────────────
-   0) Fuentes
-───────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap');
-
-/* ─────────────────────────────────────────────────────────
-   1) VARIABLES: tema Amanecer
-───────────────────────────────────────────────────────── */
-:root {
-  /* Font */
-  --ifm-font-family-base: 'Inter', sans-serif;
-  --ifm-font-family-headings: 'Poppins', sans-serif;
-
-  /* Colores Claro */
-  --ifm-color-background: #fff8f0;       /* piel de durazno muy suave */
-  --ifm-color-surface:    #ffffff;       /* blanco puro */
-  --ifm-color-text:       #1a1a1a;       /* casi negro */
-  --ifm-color-primary:    #ff8c00;       /* naranja amanecer */
-  --ifm-color-primary-dark: #e07b00;      /* naranja más intenso */
-  --ifm-color-secondary:  #ffdd91;       /* melocotón */
-  --ifm-color-muted:      #555555;       /* texto secundario */
-  --ifm-color-border:     #ffe5cc;       /* borde suave */
+/**
+  * Any CSS included here will be global. The classic template
+  * bundles Infima by default. Infima is a CSS framework designed to
+  * work well for content-centric websites.
+  */
+ 
+ /* You can override the default Infima variables here. */
+ :root {
+  --ifm-color-primary: #ffa977;
+  --ifm-color-primary-dark: #ff7e33;
+  --ifm-color-primary-darker: #ffa977;
+  --ifm-color-primary-darkest: #ffa977;
+  --ifm-color-primary-light: #ffa977;
+  --ifm-color-primary-lighter: #ffa977;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-secondary: #000000;            /* naranja suave */
+  --ifm-color-text: #2d2d34;
+  --ifm-color-muted: #6c6c80;
+  --ifm-color-border: #e0dfe6;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  /* Colores Oscuro */
-  --ifm-color-background:  #1a1626;      /* púrpura profundo */
-  --ifm-color-surface:     #2b2540;      /* morado grisáceo */
-  --ifm-color-text:        #e0dfe6;      /* gris claro */
-  --ifm-color-primary:     #ffa347;      /* naranja suave */
-  --ifm-color-primary-dark:#e68a00;      /* naranja intenso */
-  --ifm-color-secondary:   #704b75;      /* lila apagado */
-  --ifm-color-muted:       #aaaaaa;      /* texto secundario */
-  --ifm-color-border:      #3b2d4a;      /* borde oscuro */
+  --ifm-color-background: #1f1f2e;           /* azul oscuro/adamascado */
+  --ifm-color-surface: #252539;
+  --ifm-color-primary: #b78cff;              /* lila neón */
+  --ifm-color-primary-dark: #9463e1;
+  --ifm-color-secondary: #938fd1;            /* naranja cálido */
+  --ifm-color-text: #e0dfe6;
+  --ifm-color-muted: #9999a8;
+  --ifm-color-border: #3a3a52;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* ─────────────────────────────────────────────────────────
-   2) Reset ligero y Layout
-───────────────────────────────────────────────────────── */
+
+/* Aplica fondo general y tipografías */
 body {
-  margin: 0;
-  padding: 0;
-  background: var(--ifm-color-background);
-  color: var(--ifm-color-text);
+  color: var(--ifm-color);
   font-family: var(--ifm-font-family-base);
   line-height: 1.6;
 }
-
-/* Centro y márgenes del contenido */
-.main-wrapper {
-  max-width: 1000px;
-  margin: 5rem auto 1rem;
-  padding: 0 1rem;
-}
-
-/* Sidebar fija y contenido responsivo */
-.theme-doc-sidebar-container {
-  position: fixed;
-  top: 4rem;
-  left: 1rem;
-  width: 220px;
-  height: calc(100vh - 4rem);
-  overflow-y: auto;
-  background: var(--ifm-color-surface);
-  border-radius: 8px;
-  border: 1px solid var(--ifm-color-border);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  padding: 1rem;
-}
-.main-wrapper {
-  margin-left: 260px;
-  max-width: calc(100% - 280px);
-}
-.docBreadcrumb {
-  margin-left: 260px;
-}
-
-/* Sidebar móvil */
-@media (max-width: 768px) {
-  .theme-doc-sidebar-container {
-    position: static;
-    width: 100%;
-    height: auto;
-    box-shadow: none;
-    margin-bottom: 1rem;
-  }
-  .main-wrapper {
-    margin-left: 0;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────
-   3) Tipografías y encabezados
-───────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5 {
-  font-family: var(--ifm-font-family-headings);
-  color: var(--ifm-color-primary);
-  margin-top: 2rem;
-  letter-spacing: 0.5px;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
 }
 
-/* Links por defectos y hover */
-a {
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-  transition: color .2s;
-}
-a:hover {
-  color: var(--ifm-color-primary-dark);
-}
+
 
 /* ─────────────────────────────────────────────────────────
-   4) Navbar translúcida
+   3) NAVBAR: cristal moderno
 ───────────────────────────────────────────────────────── */
 .navbar {
-  background: rgba(255,255,255,0.8);
+  background: rgba(253, 203, 169, 0.8);
   backdrop-filter: blur(8px);
   padding: 0.5rem 2rem;
   border-bottom: 1px solid var(--ifm-color-border);
 }
 [data-theme='dark'] .navbar {
-  background: rgba(26,22,38,0.8);
+  background: rgba(31,31,47,0.8);
 }
 .navbar__link {
   color: var(--ifm-color-text);
@@ -142,9 +81,19 @@ a:hover {
   width: 100%;
 }
 
+
 /* ─────────────────────────────────────────────────────────
-   5) Sidebar items
+   4) SIDEBAR: estilo «tarjeta» e indentado
 ───────────────────────────────────────────────────────── */
+.theme-doc-sidebar-container {
+  background: var(--ifm-color-surface);
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+[data-theme='dark'] .theme-doc-sidebar-container {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 .theme-doc-sidebar-item-link {
   display: block;
   padding: 0.6rem 1rem;
@@ -154,17 +103,11 @@ a:hover {
   font-weight: 500;
   transition: background .2s, color .2s;
 }
-.theme-doc-sidebar-item-link:hover {
-  background: var(--ifm-color-primary);
-  color: #fff;
-}
-.theme-doc-sidebar-item-link--active {
-  background: var(--ifm-color-primary-dark);
-  color: #fff;
-}
+
+
 
 /* ─────────────────────────────────────────────────────────
-   6) Botones y focus states
+   5) BOTONES y enlaces
 ───────────────────────────────────────────────────────── */
 button, .button {
   background: var(--ifm-color-primary);
@@ -173,20 +116,24 @@ button, .button {
   padding: 0.6rem 1.2rem;
   color: #fff;
   font-weight: 500;
-  cursor: pointer;
   transition: background .2s, transform .1s;
 }
 button:hover, .button:hover {
   background: var(--ifm-color-primary-dark);
   transform: translateY(-1px);
 }
-button:focus, .button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255,140,0,0.4);
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color .2s;
+}
+a:hover {
+  color: var(--ifm-color-primary-dark);
 }
 
+
 /* ─────────────────────────────────────────────────────────
-   7) Footer limpio
+   6) FOOTER: limpio y minimalista
 ───────────────────────────────────────────────────────── */
 .footer {
   background: var(--ifm-color-surface);
@@ -195,27 +142,4 @@ button:focus, .button:focus {
   color: var(--ifm-color-text);
   font-size: 0.9rem;
   text-align: left;
-}
-.footer a {
-  color: var(--ifm-color-secondary);
-}
-
-/* ─────────────────────────────────────────────────────────
-   8) Código y bloques de resaltado
-───────────────────────────────────────────────────────── */
-.theme-code-block {
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-[data-theme='dark'] .theme-code-block {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-/* ─────────────────────────────────────────────────────────
-   9) Imágenes alineadas al inicio
-───────────────────────────────────────────────────────── */
-.docImageBlock,
-.blockImage {
-  text-align: left !important;
 }
