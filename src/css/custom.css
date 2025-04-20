@@ -1,29 +1,174 @@
-/* src/css/custom.css */
-
-/* 1. Ocultar branding de Docusaurus */
-.navbar__title,
-.navbar__logo,
-.footer__logo,
-.footer__brand {
-  display: none;
+/* ─────────────────────────────────────────────────────────
+   0) RESET ligero para quitar centrados por defecto
+───────────────────────────────────────────────────────── */
+.main-wrapper {
+  max-width: 1000px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
+}
+.theme-doc-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-/* 2. Colores y tipografía de marca */
+/* ─────────────────────────────────────────────────────────
+   1) VARIABLES: paleta moderna
+───────────────────────────────────────────────────────── */
+/* Tema claro */
 :root {
-  --ifm-color-primary: #1a73e8;
-  --ifm-color-secondary: #e37400;
-  --ifm-font-family-base: 'Open Sans', sans-serif;
-  --ifm-code-font-family: 'Fira Code', monospace;
+  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-color-background: #f5f2f8;           /* lila muy suave */
+  --ifm-color-surface: #ffffff;
+  --ifm-color-primary: #8d6dcf;              /* púrpura medio */
+  --ifm-color-primary-dark: #7549ac;
+  --ifm-color-secondary: #ffb86c;            /* naranja suave */
+  --ifm-color-text: #2d2d34;
+  --ifm-color-muted: #6c6c80;
+  --ifm-color-border: #e0dfe6;
 }
 
-/* 3. Ajustes de layout */
-.navbar,
-.footer {
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* Tema oscuro */
+[data-theme='dark'] {
+  --ifm-color-background: #1f1f2e;           /* azul oscuro/adamascado */
+  --ifm-color-surface: #252539;
+  --ifm-color-primary: #b78cff;              /* lila neón */
+  --ifm-color-primary-dark: #9463e1;
+  --ifm-color-secondary: #ff9e64;            /* naranja cálido */
+  --ifm-color-text: #e0dfe6;
+  --ifm-color-muted: #9999a8;
+  --ifm-color-border: #3a3a52;
 }
 
-/* 4. Enlaces sin subrayado */
+/* Aplica fondo general */
+body {
+  background-color: var(--ifm-color-background);
+  color: var(--ifm-color-text);
+  font-family: var(--ifm-font-family-base);
+}
+
+/* ─────────────────────────────────────────────────────────
+   2) NAVBAR: cristal moderno
+───────────────────────────────────────────────────────── */
+.navbar {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid var(--ifm-color-border);
+}
+[data-theme='dark'] .navbar {
+  background: rgba(31,31,47,0.8);
+}
+.navbar__link {
+  color: var(--ifm-color-text);
+  margin: 0 1rem;
+  font-weight: 500;
+  position: relative;
+}
+.navbar__link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--ifm-color-primary);
+  transition: width .3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────
+   3) SIDEBAR: estilo «tarjeta» e indentado
+───────────────────────────────────────────────────────── */
+.theme-doc-sidebar-container {
+  background: var(--ifm-color-surface);
+  border-radius: 8px;
+  padding: 1rem 0.5rem;
+  margin-right: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border: 1px solid var(--ifm-color-border);
+}
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background: var(--ifm-color-surface);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.theme-doc-sidebar-item-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  margin: 0.2rem 0;
+  border-radius: 6px;
+  color: var(--ifm-color-text);
+  font-weight: 500;
+  transition: background .2s;
+}
+.theme-doc-sidebar-item-link:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+.theme-doc-sidebar-item-link--active {
+  background: var(--ifm-color-primary-dark);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────────────────────
+   4) BOTONES y enlaces
+───────────────────────────────────────────────────────── */
+button, .button {
+  background: var(--ifm-color-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  color: #fff;
+  font-weight: 500;
+  transition: background .2s, transform .1s;
+}
+button:hover, .button:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+}
 a {
+  color: var(--ifm-color-primary);
   text-decoration: none;
+  transition: color .2s;
+}
+a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* ─────────────────────────────────────────────────────────
+   5) FOOTER: limpio y minimalista
+───────────────────────────────────────────────────────── */
+.footer {
+  background: var(--ifm-color-surface);
+  border-top: 1px solid var(--ifm-color-border);
+  padding: 2rem 1rem;
+  color: var(--ifm-color-text);
+  font-size: 0.9rem;
+  text-align: left;
+}
+.footer a {
+  color: var(--ifm-color-secondary);
+}
+.footer .footer__link-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* ─────────────────────────────────────────────────────────
+   6) CÓDIGO y bloques de resaltado
+───────────────────────────────────────────────────────── */
+.theme-code-block {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+[data-theme='dark'] .theme-code-block {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Ajustes extra para no centrar imágenes y módulos */
+.docImageBlock,
+.blockImage {
+  text-align: left !important;
 }
