@@ -37,7 +37,6 @@
   height: auto;
   margin: 2rem 0;
   border-radius: var(--ifm-border-radius);
-  box-shadow: var(--ifm-box-shadow);
 }
 
 .buttons {

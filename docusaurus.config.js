@@ -23,8 +23,8 @@ const config = {
 
 
   stylesheets: [
-    'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap',
-    'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap',
+  'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap',
+  'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap',
   ],
 
   // GitHub pages deployment config.
@@ -97,7 +97,7 @@ const config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Kazu2006/Proyecto-Docusaurus',
           label: 'GitHub',
           position: 'right',
         },
@@ -111,7 +111,7 @@ const config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/intro',
+              to: '/docs/Tutorial-Gestor-contraseña/gestor-contrasenas/',
             },
           ],
         },
@@ -141,7 +141,7 @@ const config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/Kazu2006/Proyecto-Docusaurus',
             },
           ],
         },

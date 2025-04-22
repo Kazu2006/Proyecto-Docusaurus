@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function HomepageHeader() {
   // Aquí cambiamos el h1
@@ -14,15 +15,16 @@ function HomepageHeader() {
         <h1 className={styles.title}>Bienvenido a mi Guía</h1>
         <p className={styles.subtitle}>Manual práctico para tu gestor de contraseñas</p>
 
-        <img
-          src="/img/hero-gestor.png"
-          alt="Ilustración gestor de contraseñas"
-          className={styles.heroImage}
-        />
+      <img         
+        src={useBaseUrl('img/seguridad.png')}
+        alt="Ilustración gestor de contraseñas"
+        className={styles.heroImage}
+      />
+
 
         <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/docs/intro">
-            Comenzar Guía 🔒
+          <Link className="button button--primary button--lg" to="/docs/Tutorial-Gestor-contraseña/gestor-contrasenas/">
+            Comenzar Aqui
           </Link>
         </div>
       </div>
