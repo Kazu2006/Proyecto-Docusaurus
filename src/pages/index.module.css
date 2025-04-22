@@ -1,4 +1,9 @@
 /* src/pages/index.module.css */
+/* 1) Importa las tipografías desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+
 
 .heroBanner {
   /* Usa tus variables globales de custom.css */
@@ -7,10 +12,8 @@
     var(--ifm-color-primary),
     var(--ifm-color-secondary)
   );
-  color: #fff;
+  color: var(--ifm-color-emphasis) !important;
   padding: 4rem 1rem;
-  border-radius: var(--ifm-border-radius);
-  box-shadow: var(--ifm-box-shadow);
   text-align: center;
   overflow: hidden;
 }
@@ -22,12 +25,14 @@
 
 .title {
   font-family: var(--ifm-font-family-heading);
-  font-size: 3rem;
+  font-size: 60px;
+  font-weight: 800;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   font-size: 1.25rem;
+  font-weight: 800;
   opacity: 0.9;
   margin-bottom: 2rem;
 }
@@ -36,13 +41,75 @@
   max-width: 100%;
   height: auto;
   margin: 2rem 0;
-  border-radius: var(--ifm-border-radius);
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+
+/* contenedor principal */
+.mainContent {
+  padding: 4rem 2rem;
+  background: var(--ifm-color-background);
+}
+
+/* sección informativa */
+.infoSection {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+.sectionTitle {
+  font-family: var(--ifm-font-family-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+.sectionText {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* sección de “tarjetas” */
+.featuresSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+/* TARJETA MEJORADA */
+.card {
+  background: var(--ifm-color-background);
+  border: 2px solid var(--ifm-color-emphasis) !important;
+  border-radius: var(--ifm-border-radius);
+  box-shadow: var(--ifm-box-shadow);
+  padding: 2rem;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-color: var(--ifm-color-primary) !important; /* borde cambia de color al pasar el ratón */
+}
+
+.card h3 {
+  font-family: var(--ifm-font-family-heading);
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+  font-weight: 800;
+  font-size: 28px;
+}
+
+.card p {
+  color: var(--ifm-color-emphasis);
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 800;
 }
 
 /* Ajustes responsivos */

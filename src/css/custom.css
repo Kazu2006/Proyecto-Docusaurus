@@ -176,11 +176,11 @@ a:hover {
 /* ------------------------------ */
 .button, .button--primary {
   background: var(--ifm-color-primary);
-  color: #fff;
+  color: var(--ifm-color-emphasis) !important;
   border: none;
   border-radius: var(--ifm-border-radius);
   padding: 0.75rem 1.5rem;
-  font-weight: 500;
+  font-weight: 800;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -210,15 +210,15 @@ a:hover {
 /* 15) Footer                     */
 /* ------------------------------ */
 footer {
-  background: var(--ifm-color-background);
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-secondary));
   border-top: 1px solid rgba(0,0,0,0.1);
   padding: 2rem 1rem;
   text-align: center;
   color: var(--ifm-color-emphasis);
 }
-footer a {
-  color: var(--ifm-color-primary);
-  font-weight: 500;
+footer a , footer div {
+  color: var(--ifm-color-emphasis) !important;
+  font-weight: 800;
 }
 
 

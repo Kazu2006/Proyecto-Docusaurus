@@ -1,0 +1,41 @@
+/* styles.module.css */
+.toggle {
+    width: 4rem;
+    height: 2rem;
+    border: 2px solid  var(--ifm-color-emphasis);               /* ← borde negro */
+    border-radius: 2rem;
+    background: var(--ifm-color-background);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease;             /* suaviza cambio de color de borde */
+  }
+  
+  .toggle:hover {
+    border-color: var(--ifm-color-primary); /* opcional: cambia el borde al pasar el ratón */
+  }
+  
+  .toggle svg {
+    position: absolute;
+    top: 50%;
+    left: 0.4rem;
+    transform: translateY(-50%);
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: #ffffff;
+    transition: left 0.3s ease;
+  }
+  
+  [data-theme='dark'] .toggle {
+    background: var(--ifm-color-primary);
+    /* puedes opcionalmente ajustar el borde en dark:
+       border-color: #000;  */
+  }
+  
+  [data-theme='dark'] .toggle svg {
+    left: auto;
+    right: 0.4rem;
+  }
+  
