@@ -3,9 +3,9 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-// import HomepageFeatures from '@site/src/components/HomepageFeatures';  ← ya no lo usas
-import styles from './index.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import styles from './index.module.css';
+
 
 function HomepageHeader() {
   // Aquí cambiamos el h1
@@ -23,7 +23,7 @@ function HomepageHeader() {
 
 
         <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/docs/Tutorial-Gestor-contraseña/gestor-contrasenas/">
+          <Link className="button button--primary button--lg" to={useBaseUrl('docs/gestor-contrasenas/')}>
             Comenzar Aqui
           </Link>
         </div>
