@@ -19,7 +19,7 @@ const config = {
   url: 'https://960439320.senati.chat.pe',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docusaurus',
+  baseUrl: '/docusaurus/',
 
 
   stylesheets: [
@@ -97,10 +97,18 @@ const config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/Kazu2006/Proyecto-Docusaurus',
-          label: 'GitHub',
+          type: 'html',
           position: 'right',
+          value: `
+            <a href="https://github.com/Kazu2006/Proyecto-Docusaurus"
+               class="navbar-github-link"
+               target="_blank" rel="noopener">
+              <span>Mi GitHub</span>
+              <img src="/docusaurus/img/github-icon.svg" alt="GitHub" />
+            </a>
+          `,
         },
+        
       ],
     },
     footer: {
@@ -111,7 +119,7 @@ const config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/Tutorial-Gestor-contraseña/gestor-contrasenas/',
+              to: '/docs/gestor-contrasenas',
             },
           ],
         },

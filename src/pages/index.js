@@ -40,31 +40,46 @@ export default function Home() {
     >
       <HomepageHeader />
       <main className={styles.mainContent}>
-        {/* ————————— Custom Section 1 ————————— */}
-        <section className={styles.infoSection}>
-          <h2 className={styles.sectionTitle}>¿Por qué un gestor de contraseñas?</h2>
-          <p className={styles.sectionText}>
-            Aquí puedes explicar en detalle los beneficios, cómo usarlo paso a paso,
-            e incluso enlazar a subsecciones de tu guía.
-          </p>
-        </section>
+  {/* ————————— Custom Section 1 ————————— */}
+  <section className={styles.infoSection}>
+    <h2 className={styles.sectionTitle}>¿Por qué un gestor de contraseñas?</h2>
+    <p className={styles.sectionText}>
+      Un gestor de contraseñas te permite almacenar todas tus credenciales en un entorno cifrado de forma centralizada, 
+      de modo que solo necesites recordar una contraseña maestra. Esto elimina la necesidad de reutilizar claves débiles y 
+      mejora drásticamente tu higiene digital. Además, muchos gestores ofrecen funcionalidades como generación de contraseñas 
+      seguras, auditorías automáticas de fuerza y comprobaciones de fugas de datos, para que estés siempre protegido.
+    </p>
+  </section>
 
-        {/* ————————— Custom Section 2 ————————— */}
-        <section className={styles.featuresSection}>
-          <div className={styles.card}>
-            <h3>Seguridad</h3>
-            <p>Encripta todas tus contraseñas con algoritmos de última generación.</p>
-          </div>
-          <div className={styles.card}>
-            <h3>Accesibilidad</h3>
-            <p>Disponible en web, móvil y escritorio, siempre a tu alcance.</p>
-          </div>
-          <div className={styles.card}>
-            <h3>Sincronización</h3>
-            <p>Sincroniza tus datos de forma segura entre todos tus dispositivos.</p>
-          </div>
-        </section>
-      </main>
+  {/* ————————— Custom Section 2 ————————— */}
+  <section className={styles.featuresSection}>
+    <div className={styles.card}>
+      <h3>Seguridad</h3>
+      <p>
+        Todas tus contraseñas se cifran localmente usando algoritmos de última generación (AES-256), 
+        de modo que ni siquiera el proveedor del servicio puede acceder a ellas. 
+        Además, puedes activar autenticación de dos factores (2FA) para proteger el acceso a tu bóveda.
+      </p>
+    </div>
+    <div className={styles.card}>
+      <h3>Accesibilidad</h3>
+      <p>
+        Tu bóveda está disponible desde clientes nativos (Windows, macOS, Linux) y aplicaciones móviles 
+        (iOS, Android), así como extensiones para navegadores web.  
+        Incluso puedes acceder desde la interfaz web si cambias de dispositivo.
+      </p>
+    </div>
+    <div className={styles.card}>
+      <h3>Sincronización</h3>
+      <p>
+        Cada vez que guardas o actualizas una entrada, los cambios se propagan automáticamente 
+        a todos tus dispositivos en cuestión de segundos, ya sea usando la nube pública o 
+        tu propio servidor autoalojado. Así, siempre tendrás la última versión de tus contraseñas.
+      </p>
+    </div>
+  </section>
+</main>
+
     </Layout>
   );
 }

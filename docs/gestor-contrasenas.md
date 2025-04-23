@@ -5,13 +5,13 @@ sidebar_label: 🔐 Gestor Contraseña
 sidebar_position: 1
 ---
 
-# Manual para implementar un Gestor de Contraseñas y su uso práctico
+# Manual para implementar un Gestor de Contraseñas y su uso práctico 🧩
 
 Este documento es una **guía paso a paso**, clara y detallada, para instalar, configurar y utilizar un gestor de contraseñas. Está pensado como tutorial para principiantes y avanzados, con ejemplos reales, recomendaciones de seguridad, capturas de pantalla y código cuando sea necesario.
 
 ---
 
-## 1. Introducción
+## 1. Introducción 🧩
 
 Un gestor de contraseñas permite:
 
@@ -30,7 +30,7 @@ Un gestor de contraseñas permite:
 
 ---
 
-## 2. Instalación y configuración de Bitwarden Desktop
+## 2. Instalación y configuración de Bitwarden Desktop 🧩
 
 ### 2.1 Descarga
 
@@ -38,7 +38,7 @@ Un gestor de contraseñas permite:
 - Elige tu sistema operativo: **Windows**, **macOS** o **Linux**.
 
 > **Captura 1:** Página de descarga de Bitwarden.  
-> `![Captura 1: Descarga de Bitwarden](./img/1-bitwarden-descarga.png)`
+> ![Captura 1: Descarga de Bitwarden](/img/pagina-web.png)
 
 ### 2.2 Instalación
 
@@ -57,8 +57,6 @@ Un gestor de contraseñas permite:
 wget https://vault.bitwarden.com/download/?app=desktop&platform=linux -O bitwarden.deb
 sudo dpkg -i bitwarden.deb
 ```  
-> **Captura 2:** Terminal instalando Bitwarden en Linux.  
-> `![Captura 2: Instalación en Linux](./img/2-bitwarden-terminal.png)`
 
 ### 2.3 Primer inicio y seguridad
 
@@ -67,10 +65,11 @@ sudo dpkg -i bitwarden.deb
 3. Habilita **2FA**: recomendamos usar Authenticator (TOTP) o YubiKey.
 
 > **Comentario:** La contraseña maestra nunca debe guardarse en el gestor.
+> ![Captura 2: Creacion de cuenta](/img/crear-cuenta.png)
 
 ---
 
-## 3. Organización de la bóveda
+## 3. Organización de la bóveda 🧩
 
 Para un acceso rápido y ordenado:
 
@@ -81,13 +80,13 @@ Para un acceso rápido y ordenado:
 | Favoritos   | Web corporativa, Banco     | Acceso inmediato                    |
 
 > **Captura 3:** Estructura de carpetas y etiquetas.  
-> `![Captura 3: Organización de la bóveda](./img/3-organizacion.png)`
+> ![Captura 3: Organización de la bóveda](/img/orden-carpetas.png)
 
 **Recomendación:** Mantén nombres claros y coherentes. No abuses de etiquetas.
 
 ---
 
-## 4. Uso práctico diario
+## 4. Uso práctico diario 🧩
 
 ### 4.1 Generar y guardar una contraseña
 
@@ -97,7 +96,7 @@ Para un acceso rápido y ordenado:
 4. Copia al portapapeles y haz **Guardar**.
 
 > **Captura 4:** Panel de generación de contraseña.  
-> `![Captura 4: Generar contraseña](./img/4-generar.png)`
+> ![Captura 4: Generar contraseña](/img/prueba-gmail.png)
 
 ### 4.2 Auto‑relleno en navegador
 
@@ -105,12 +104,14 @@ Para un acceso rápido y ordenado:
 2. Autoriza la extensión tras iniciar sesión.  
 3. En la web de login, haz clic en el icono y selecciona la credencial guardada.
 
-> **Captura 5:** Auto‑relleno en Chrome.  
-> `![Captura 5: Auto‑relleno](./img/5-autorellenar.png)`
+> **Captura 5:** Extension en Opera.  
+> ![Captura 5: Auto‑relleno](/img/extension-opera.png)
+> **Captura 5:** Resultado:
+> ![Captura e: cap](/img/descarga.png)
 
 ---
 
-## 5. Compartir contraseñas de forma segura
+## 5. Compartir contraseñas de forma segura 🧩
 
 Compartir por chat o correo sin cifrado es arriesgado. Se proponen dos métodos sencillos y controlados:
 
@@ -123,9 +124,6 @@ Compartir por chat o correo sin cifrado es arriesgado. Se proponen dos métodos 
 
 > **Comportamiento:** El enlace se destruye tras el tiempo o una sola lectura.
 
-> **Captura 6:** Configuración de Send.  
-> `![Captura 6: Bitwarden Send](./img/6-send.png)`
-
 ### 5.2 1Password Web (compartición limitada)
 
 1. Accede a: https://my.1password.com  
@@ -133,12 +131,9 @@ Compartir por chat o correo sin cifrado es arriesgado. Se proponen dos métodos 
 3. Añade correo del destinatario y ajusta permisos (lectura, caducidad).  
 4. Envía invitación.
 
-> **Captura 7:** Interfaz de compartir en 1Password.  
-> `![Captura 7: 1Password compartir](./img/7-1password.png)`
-
 ---
 
-## 6. Alternativas de un solo uso (temporal)
+## 6. Alternativas de un solo uso (temporal) 🧩
 
 | Servicio         | Característica                       | URL                              |
 |------------------|--------------------------------------|----------------------------------|
@@ -149,7 +144,7 @@ Compartir por chat o correo sin cifrado es arriesgado. Se proponen dos métodos 
 
 ---
 
-## 7. Sincronización y respaldo
+## 7. Sincronización y respaldo 🧩
 
 ### 7.1 Bitwarden (sincronización en la nube)
 - Cifrado end‑to‑end en servidores Bitwarden.
@@ -162,19 +157,8 @@ Compartir por chat o correo sin cifrado es arriesgado. Se proponen dos métodos 
 # Ejemplo de copia automática (Linux)
 cp ~/Documents/miBoveda.kdbx ~/Dropbox/Backups/$(date +%F)-boveda.kdbx
 ```  
-> **Captura 8:** Script de respaldo automático.  
-> `![Captura 8: Respaldo KeePass](./img/8-backup.png)`
 
 ---
-
-## Observaciones finales
-
-- **Capturas**: toma screenshots de cada paso y nómbralas como `1-bitwarden-descarga.png`, etc.
-- **Comentarios**: explica en cada sección las razones de seguridad.
-- **Claridad**: usa párrafos breves, listas numeradas y tablas para sintetizar.
-- **Código**: cuando uses scripts, inclúyelos en bloques formateados.
-
-> "Una guía bien documentada evita errores y mejora la adopción entre nuevos usuarios."  
 
 *Fin del manual.*
 

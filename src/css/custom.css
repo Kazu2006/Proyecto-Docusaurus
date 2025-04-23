@@ -252,3 +252,41 @@ footer a , footer div {
 [data-theme='dark'] .theme-doc-sidebar .menu__link {
   background: transparent;
 }
+
+/* ============================
+   Estilos para el enlace GitHub
+   ============================ */
+   .navbar-github-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;                        /* un poco más de espacio */
+    font-family: var(--ifm-font-family-heading);
+    font-weight: 600;
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+/* ============================
+   Quitar subrayado en hover
+   ============================ */
+   .navbar-github-link,
+   .navbar-github-link:hover {
+     text-decoration: none; /* elimina la línea */
+   }
+   
+   /* Reaplica el cambio de color sin subrayado */
+   .navbar-github-link:hover {
+     color: var(--ifm-color-secondary);
+   }
+   
+  .navbar-github-link img {
+    width: 2.2rem;                         /* agrandada */
+    height: 2.2rem;
+    /* sin bordes ni esquinas redondeadas */
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-github-link:hover img {
+    transform: scale(1.1);               /* ligero zoom al pasar el cursor */
+  }

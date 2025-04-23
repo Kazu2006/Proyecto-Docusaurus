@@ -8,7 +8,7 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'doc',
-      id: 'Tutorial-Gestor-contraseña/gestor-contrasenas',
+      id: 'gestor-contrasenas',
       label: 'Gestor de Contraseñas',
     },
   ],
