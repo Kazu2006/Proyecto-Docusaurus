@@ -115,7 +115,7 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentos',
           items: [
             {
               label: 'Tutorial',
@@ -124,19 +124,34 @@ const config = {
           ],
         },
         {
-          title: 'Community',
+          title: 'Redes',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+            html: `
+               <a href="https://stackoverflow.com/questions/tagged/docusaurus"
+                target="_blank" rel="noopener">
+                <img src="/docusaurus/img/stack-overflow.png" alt="Stack Overflow" class="footer-icon" />
+                Stack Overflow
+                </a>
+                `,
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              html: `
+                <a href="https://discordapp.com/invite/docusaurus"
+                target="_blank" rel="noopener">
+                <img src="/docusaurus/img/discord.svg" alt="Discord" class="footer-icon" />
+                Discord
+                </a>
+                `,
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              html: `
+                <a href="https://x.com/docusaurus"
+                target="_blank" rel="noopener">
+                <img src="/docusaurus/img/X.png" alt="X (Twitter)" class="footer-icon" />
+                Twitter
+                </a>
+                `,
             },
           ],
         },
@@ -144,17 +159,18 @@ const config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/Kazu2006/Proyecto-Docusaurus',
+              html: `
+                <a href="https://x.com/docusaurus"
+                target="_blank" rel="noopener">
+                <img src="/docusaurus/img/github-icon.svg" alt="Git (Github)" class="footer-icon" />
+                Github
+                </a>
+                `,
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Mi Proyecto en Docusaurus`,
     },
     prism: {
       theme: prismThemes.github,

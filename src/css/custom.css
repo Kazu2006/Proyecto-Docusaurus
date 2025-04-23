@@ -6,26 +6,62 @@
 :root {
   --ifm-font-family-base: 'Roboto', sans-serif;
   --ifm-font-family-heading: 'Montserrat', sans-serif;
-  --ifm-color-primary: #3f51b5;
-  /* Colores principales (light mode) */
-  --ifm-color-primary: #3f51b5;
-  --ifm-color-secondary: #ff4081;
-  --ifm-color-background: #ffffff;
-  --ifm-color-emphasis: rgba(0,0,0,0.8);
+
+  /* Colores inspirados en Isagi */
+  --ifm-color-background: #f5f7fa;            /* gris azulado suave */
+  --ifm-color-emphasis: #000000;              /* texto claro */
+  --ifm-color-primary: #2962ff;               /* azul ego central */
+  --ifm-color-secondary: #7c4dff;             /* púrpura aura secundaria */
+  --ifm-color-accent: #00e5ff;                /* cian brillante – destellos */
+
+  /* Código y sombras */
   --ifm-code-font-size: 95%;
-    /* Borde y sombras */
-    --ifm-border-radius: 0.5rem;
-    --ifm-box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-border-radius: 0.6rem;
+  --ifm-box-shadow: 0 0 20px rgba(41, 98, 255, 0.4); /* glow azul */
+  --docusaurus-highlighted-code-line-bg: rgba(41, 98, 255, 0.2);
 }
 
-/* 3) Dark mode: paleta más tenue */
+/* === Paleta Nagi – Estética de frío y controlado === */
 [data-theme='dark'] {
-  --ifm-color-background: #121212;
-  --ifm-color-emphasis: #e0e0e0;
-  --ifm-color-primary: #536dfe;
-  --ifm-color-secondary: #ff80ab;
-  --ifm-box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  --ifm-color-background: #08080f; /* fondo ultra oscuro, como el vacío */
+  --ifm-color-emphasis: #d8d8d8;   /* texto gris claro */
+  --ifm-color-primary: #8e6fff;    /* púrpura fantasmal */
+  --ifm-color-secondary: #3a3a50;  /* gris-violeta de fondo flotante */
+  --ifm-color-accent: #9aa5ff;     /* azul suave de destellos */
+
+  /* Glow sutil con sombras etéreas */
+  --ifm-box-shadow: 0 0 25px rgba(142, 111, 255, 0.3), 0 0 40px rgba(0,0,0,0.7);
+
+  /* Fondo tipo aura en hero y main */
+  background: radial-gradient(
+    circle at 50% 30%,
+    #1b1b28 0%,
+    #3a3a50 50%,
+    #08080f 100%
+  );
+}
+
+/* Degradado con aura flotante como fondo */
+[data-theme='dark'] .hero,
+[data-theme='dark'] .home__hero,
+[data-theme='dark'] footer,
+[data-theme='dark'] .mainContent {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(93, 63, 211, 0.15) 0%,
+    rgba(0, 0, 0, 0.85) 80%
+  ) !important;
+  box-shadow: inset 0 90px 80px rgba(142, 111, 255, 0.15);
+}
+
+
+/* Glow en botones y tarjetas */
+.button, .card {
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+.button:hover, .card:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.7);
 }
 
 
@@ -63,7 +99,7 @@ a:hover {
   padding: 1rem 2rem;
 }
 .navbar__title, .navbar a {
-  color: var(--ifm-color-primary) !important;
+  color: var(--ifm-color-emphasis) !important;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -283,10 +319,135 @@ footer a , footer div {
   .navbar-github-link img {
     width: 2.2rem;                         /* agrandada */
     height: 2.2rem;
-    /* sin bordes ni esquinas redondeadas */
-    transition: transform 0.3s ease;
+    filter: none;                    /* modo claro: icono en su color original */
+    transition: filter 0.3s ease;    /* animación suave al cambiar tema */
   }
   
   .navbar-github-link:hover img {
     transform: scale(1.1);               /* ligero zoom al pasar el cursor */
   }
+
+  [data-theme='dark'] .navbar-github-link img {
+    filter: invert(1) brightness(1.2);
+  }
+  
+
+/* ============================
+   Iconos en el footer
+   ============================ */
+  /* Alinea los iconos y texto en el footer */
+.footer-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  margin-right: 0.5ch;
+  filter: none;                    /* modo claro: icono en su color original */
+  transition: filter 0.3s ease;
+}
+
+.footer__links a {
+  display: inline-flex;
+  align-items: center;
+}
+
+[data-theme='dark'] .footer-icon {
+  filter: invert(1) brightness(1.2);
+}
+
+
+/* icono en su color normal (modo claro) */
+.sidebar-icon {
+  filter: none;
+  transition: filter 0.2s ease;
+}
+
+/* cuando cambie a dark, lo invertimos para que quede blanco */
+[data-theme='dark'] .sidebar-icon {
+  filter: invert(1) brightness(1.2);
+}
+
+
+
+
+
+/* === Glow + bordes para blockquotes === */
+.markdown blockquote {
+  border: 2px solid;                           /* grosor y tipo de borde */
+  border-radius: var(--ifm-border-radius);      /* radio coherente con tu tema */
+  box-shadow: var(--ifm-box-shadow);            /* glow tal cual lo tienes */
+  padding: 1rem;                                /* separación interior */
+  margin: 1.5rem 0;                             /* separación vertical */
+  background-color: transparent;                /* no toca tu fondo actual */
+}
+
+/* Tema claro: borde negro */
+[data-theme='light'] .markdown blockquote {
+  border-color: #000;
+}
+
+/* Tema oscuro: borde blanco */
+[data-theme='dark'] .markdown blockquote {
+  border-color: #fff;
+}
+
+
+/* === Glow + bordes para code blocks === */
+.markdown pre {
+  border: 2px solid;                                /* deja el color para el theme selector */
+  border-radius: var(--ifm-border-radius);
+  box-shadow: var(--ifm-box-shadow);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background-color: var(--ifm-color-background);    /* mantiene tu fondo */
+  overflow: auto;
+}
+
+[data-theme='light'] .markdown pre {
+  border-color: #000;
+}
+
+[data-theme='dark'] .markdown pre {
+  border-color: #fff;
+}
+
+
+
+
+/* === Glow + bordes para tablas === */
+.markdown table {
+  width: 55%;
+  border-collapse: collapse;
+  border: 2px solid;
+  border-radius: var(--ifm-border-radius);
+  box-shadow: var(--ifm-box-shadow);
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.markdown table th,
+.markdown table td {
+  padding: 0.75rem;
+  border-right: 1px solid;    /* líneas internas */
+  border-bottom: 1px solid;
+}
+
+.markdown table tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown table tr th:last-child,
+.markdown table tr td:last-child {
+  border-right: none;
+}
+
+[data-theme='light'] .markdown table,
+[data-theme='light'] .markdown table th,
+[data-theme='light'] .markdown table td {
+  border-color: #000;
+}
+
+[data-theme='dark'] .markdown table,
+[data-theme='dark'] .markdown table th,
+[data-theme='dark'] .markdown table td {
+  border-color: #fff;
+}
